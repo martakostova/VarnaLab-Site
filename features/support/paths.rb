@@ -19,6 +19,8 @@ module NavigationHelpers
     #
     #   when /^(.*)'s profile page$/i
     #     user_profile_path(User.find_by_login($1))
+    when  /^the "([^"]+)" admin event$/
+      admin_event_path(Event.find_by_title!($1))
     when /^the "([^"]+)" admin page$/
       admin_page_path(Page.find_by_name!($1))
     else

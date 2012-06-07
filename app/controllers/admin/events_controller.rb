@@ -10,7 +10,7 @@ class Admin::EventsController < Admin::BaseController
 	end
 
 	def show
-  	  @event = Event.find(params[:id])
+  	@event = Event.find(params[:id])
 	end
   def destroy
     destroy! :flash => !request.xhr?

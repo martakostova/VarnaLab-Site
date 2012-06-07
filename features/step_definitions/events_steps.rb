@@ -9,6 +9,7 @@ end
 When 'I start creating an event' do
   visit admin_events_path
   sign_in
+  #TODO fix it by adding fields in views
   click_link 'Create a new event'
 end
 

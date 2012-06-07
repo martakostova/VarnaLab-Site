@@ -1,4 +1,20 @@
 module Admin::PagesHelper
+  def link_to_edit_page(resource)
+    resource_name = resource.name
+    link_to 'Edit', [:edit, :admin, resource], :title => "Edit '#{resource_name}' page"
+  end
+  def link_to_delete_page(resource, options = {})
+    resource_name = resource.name
+
+    attributes = {
+      :title => "Delete '#{resource_name}' page",
+      :remote => true,
+      :method => :delete,
+      :confirm => "Are you sure you want to delete #{resource_name}?",
+    }.merge(options)
+
+    link_to 'Delete', [:admin, resource], attributes
+  end
   def link_to_adding_a_subpage(page)
     link_to 'Add subpage', new_admin_page_path(:page => {:parent_id => page.id}), :title => "Add a subpage of '#{page.name}'"
   end

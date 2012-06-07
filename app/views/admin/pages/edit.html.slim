@@ -1,6 +1,6 @@
 header
   = link_to_cancel admin_pages_path
   h1 = title "Edit #{@page.name}"
-  nav = link_to_delete @page
+  nav = link_to_delete_page @page
 
 = render 'form'
