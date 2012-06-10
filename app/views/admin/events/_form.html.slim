@@ -1,9 +1,9 @@
 = simple_form_for [:admin, @event] do |form|
   = form.error_notification
   fieldset
-    = form.input :title
-    = form.input :date
-    = form.input :place
-    = form.input :body
+    = form.input :title, :label => 'Title'
+    = form.datetime_select :date, :label => 'Date and Time'
+    = form.input :place, :label => 'Place'
+    = form.input :body, :label => 'Description'
   .buttons
-    = form.button :submit
+    = form.button :submit, :label => 'Event'

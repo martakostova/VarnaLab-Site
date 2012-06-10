@@ -9,8 +9,19 @@ end
 When 'I start creating an event' do
   visit admin_events_path
   sign_in
-  #TODO fix it by adding fields in views
   click_link 'Create a new event'
+end
+When /^I fill in the title for the following event:$/ do |title|
+  p title
+  fill_in 'Title', :with => title
+end
+
+When /^I select the following date:$/ do |table|
+  attributes = table.rows_hash
+  p attributes
+  attributes.each do |field_name, value|
+    select value from field_name
+  end
 end
 
 When 'I start editing the "$title" event' do |title|
@@ -21,11 +32,11 @@ end
 
 When 'I submit the following event:' do |table|
   attributes = table.rows_hash
+
   attributes.each do |field_name, value|
     fill_in field_name, :with => value
   end
-
-  click_button 'Event'
+  find_button('Event').click
 end
 
 When 'I delete the "$title" event' do |title|
@@ -40,7 +51,7 @@ When 'I submit a blank event' do
 end
 
 When 'I submit the event' do
-  click_button 'Event'
+  find_button('Event').click
 end
 
 Then 'I should be able to edit "$event_title"' do |event_title|

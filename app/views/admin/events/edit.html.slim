@@ -1,0 +1,6 @@
+header
+  = link_to_cancel admin_events_path
+  h1 = title "Edit #{@event.title}"
+  nav = link_to_delete_event @event
+
+= render 'form'

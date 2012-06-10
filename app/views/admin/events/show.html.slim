@@ -1,11 +1,11 @@
 header
+  = link_to_cancel admin_events_path
   h1 = title @event.title
   nav
-    //= link_to_comments_of @event //TODO make events to have comments
     = link_to_edit_event @event
     = link_to_delete_event @event, :remote => false
 
-  .content = simple_format @event.date
-    @event.place  
-    @event.body
-
+  .content =@event.body
+  =@event.place
+  | 
+  =@event.date

@@ -7,12 +7,10 @@ Feature: Managing Events
     When I start creating an event
     And I submit the following event:
       | Title         | Party   |
-      | Date and Time | 22/02/2012|
       | Place         | Varnalab Пенчо Славейков 50|
       | Description   | Come with friend |
     Then we should have the following event:
       | Title         | Party   |
-      | Date and Time | 22/02/2012|
       | Place         | Varnalab Пенчо Славейков 50|
       | Description   | Come with friend |
 
@@ -25,11 +23,9 @@ Feature: Managing Events
     Given an event "Party" exists
     When I start editing the "Party" event
     And I submit the following event:
-      | Date and Time | 22/07/2012|
       | Description   | Come with friend and beer |
     Then we should have the following event:
       | Title         | Party    |
-      | Date and Time | 22/07/2012|
       | Place         | Varnalab Пенчо Славейков 50|
       | Description   | Come with friend and beer |
 
