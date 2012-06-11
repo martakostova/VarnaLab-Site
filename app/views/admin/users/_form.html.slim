@@ -1,0 +1,10 @@
+= simple_form_for [:admin, @user] do |form|
+  = form.error_notification
+  fieldset
+    = form.input :name
+    = form.input :email
+    = form.input :password
+    = form.input :password_confirmation
+   
+  .buttons
+    = form.button :submit

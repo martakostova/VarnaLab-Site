@@ -9,7 +9,7 @@ VarnaLab::Application.routes.draw do
     match '/page/:page_id/comments/(:review)', :to => 'comments#index', :as => 'page_comments'
     
     resources :users, :controller => 'users' do
-      match '/users/index', :to => 'users#index', :as => '', :on => :collection, :constraints => { :index => /[a-z]+/ }
+      match '/index', :to => 'users#index', :as => '', :on => :collection, :constraints => { :index => /[a-z]+/ }
     end
     
     resources :comments, :only => [:destroy] do

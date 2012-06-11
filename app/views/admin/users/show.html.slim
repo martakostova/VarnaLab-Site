@@ -1,0 +1,9 @@
+header
+  = link_to_cancel admin_users_path
+  h1 = title @user.name
+  nav
+    = link_to_edit_user @user
+    = link_to_delete_user @user, :remote => false
+
+  .content =@user.email
+  =@user.created_at
