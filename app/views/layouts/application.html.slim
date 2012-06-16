@@ -3,14 +3,17 @@ html
   head
     = title_tag
     = stylesheet_link_tag 'application'
+    / use admin css, as there is no design for the app yet
+    = stylesheet_link_tag 'admin' 
     = javascript_include_tag 'application'
     = csrf_meta_tags
+    header
+        nav
+          = link_to 'Home', root_path
+          - Page.visible.roots.each do |page|
+            = link_to page.name, page
+          - if flash[:notice] or flash[:alert]
+            p class="alert"  = alert
+            p class="notice" = notice
   body
-    nav
-      = link_to 'Home', root_path
-      - Page.visible.roots.each do |page|
-        = link_to page.name, page
-      - if flash[:notice] or flash[:alert]
-        p class="alert"  = alert
-        p class="notice" = notice
-      = yield
+    = yield
