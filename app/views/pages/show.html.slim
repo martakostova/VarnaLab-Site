@@ -1,11 +1,15 @@
-h1 = title @page.name
+article
+	header
+		h1 = title @page.name
 
-- unless @page.visible_children.empty?
-  ul
-    - @page.visible_children.each do |page|
-      li = link_to page.name, page
+article
+	.content 
+		- unless @page.visible_children.empty?
+		  ul
+		    - @page.visible_children.each do |page|
+		      li = link_to page.name, page
 
-= simple_format @page.content
+		p  = simple_format @page.content
 
-= render @page.visible_comments
-= render 'comments/form' if @page.commentable?
+		p  = render @page.visible_comments
+		p  = render 'comments/form' if @page.commentable
