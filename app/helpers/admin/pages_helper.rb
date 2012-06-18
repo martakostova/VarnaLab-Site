@@ -10,7 +10,7 @@ module Admin::PagesHelper
       :title => "Delete '#{resource_name}' page",
       :remote => true,
       :method => :delete,
-      :confirm => "Are you sure you want to delete #{resource_name}?",
+      :data => { :confirm => "Are you sure you want to delete #{resource_name}?" },
     }.merge(options)
 
     link_to 'Delete', [:admin, resource], attributes

@@ -39,6 +39,9 @@ group :test do
   gem 'webrat'
   gem 'turn', :require => false
 
+  gem 'growl'
+  gem 'ruby_gntp'
+
   gem 'guard'
   gem 'guard-rspec', '~> 0.6.0'
   gem 'guard-bundler'
@@ -48,7 +51,7 @@ end
 unless ENV["CI"]
   platform :ruby_18 do
     gem 'rcov'
-    gem 'ruby-debug'
+    #gem 'rake guard-debug'// this triggers an error
   end
   platform :ruby_19 do
     gem 'simplecov'
