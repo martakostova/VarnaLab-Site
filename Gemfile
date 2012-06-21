@@ -27,7 +27,7 @@ gem 'devise'
 group :test do
   gem 'jasmine'
   gem 'rspec-rails'
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', :require => false
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'shoulda-matchers'
