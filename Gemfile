@@ -9,7 +9,7 @@ gem 'coffee-rails'
 gem 'uglifier'
 gem 'spork', '~> 0.9.0.rc9'
 gem 'compass', :git => 'https://github.com/armstrjare/compass.git', :branch => 'fix_sprockets_static_asset_error'
-
+gem 'compass-960-plugin'
 gem 'therubyracer'
 gem 'slim'
 

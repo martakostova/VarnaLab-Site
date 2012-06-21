@@ -12,4 +12,5 @@ class ApplicationController < ActionController::Base
   def find_page(id)
     Page.visible.find(id)
   end
+
 end

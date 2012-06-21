@@ -5,6 +5,8 @@ html
     = stylesheet_link_tag 'application'
     / use admin css, as there is no design for the app yet
     = stylesheet_link_tag 'admin' 
+    = stylesheet_link_tag 'grid.css', :media => 'screen, projection' 
+    = stylesheet_link_tag 'text.css', :media => 'screen, projection'
     = javascript_include_tag 'application'
     = csrf_meta_tags
     header
@@ -16,4 +18,5 @@ html
             p class="alert"  = alert
             p class="notice" = notice
   body
+  .container_12
     = yield

@@ -1,5 +1,6 @@
 @import "compass/css3";
 @import "compass/reset";
+@import "960/grid";
 @import "compass/utilities/general/clearfix";
 @import "compass/utilities/text/ellipsis";
 
@@ -21,7 +22,6 @@ body > header {
   @include box-shadow($shadow-color -5px 0 5px);
 
   text-align: center;
-  min-width: $layout-width;
   padding: 15px 0;
 
   nav { display: inline-block; }
@@ -35,7 +35,6 @@ article {
   @include box-shadow($shadow-color, 0, 1px, 2px);
   @include border-radius(5px);
 
-  width: $layout-width;
   margin: 20px auto;
   background: $content-background;
   position: relative;
