@@ -24,6 +24,7 @@ gem 'awesome_nested_set', :git => 'git://github.com/collectiveidea/awesome_neste
 
 gem 'devise'
 gem 'json'
+gem 'twitter'
 
 group :test do
   gem 'jasmine'
