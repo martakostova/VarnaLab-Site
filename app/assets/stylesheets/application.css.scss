@@ -1,5 +1,3 @@
-@import "partials/who_is_at_lab";
-
 nav {
   a + a { border-left: 1px solid black; margin-left: 10px; padding-left: 10px; }
 }
@@ -44,4 +42,34 @@ div.comment {
 	border-style:solid;
 
 }
+.bordered {
+	border: 1px solid lightGrey;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: lightGrey;
+	border-right-color: lightGrey;
+	border-bottom-color: lightGrey;
+	border-left-color: lightGrey;
+	padding: 5px;
+	box-shadow: 2px 2px 4px black;
+	-webkit-box-shadow: 2px 2px 4px black;
+}
+.box{
+	.content {
+		-webkit-box-shadow: #555 0 0 4px;
+		-khtml-box-shadow: #555 0 0 4px;
+		-moz-box-shadow: #555 0 0 4px;
+		box-shadow: #555 0 0 4px;
+		margin: 10px;
+		padding: 5px;
+		background: #EEE;
+	}
+}
+
 

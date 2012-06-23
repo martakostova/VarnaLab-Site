@@ -1,0 +1,8 @@
+.box
+	article
+		header
+			h1  Събития
+		.content
+			ul
+		    - @events.each do |event|
+		      li = link_to event.title, 'partials/event'

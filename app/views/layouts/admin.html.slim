@@ -4,22 +4,16 @@ html
     meta charset="utf-8"
     = title_tag
     = stylesheet_link_tag 'admin'
+    = stylesheet_link_tag 'grid.css', :media => 'screen, projection' 
+    = stylesheet_link_tag 'text.css', :media => 'screen, projection'
     = csrf_meta_tags
-  body
-    header
-      nav
-        = link_to 'Pages', admin_pages_path
-        = link_to unreviewed_admin_comments_path do
-          | Comments
-          = unreviewed_comments_badge
-        = link_to 'Events', '/admin/events'
-        = link_to 'Users', '/admin/users'
-        - if user_signed_in?
-          = link_to 'Logout', destroy_user_session_path, :method => :delete
+    body
+      header
+        =render 'admin/partials/menu'
 
-    - if flash[:notice].present?
-      .notice data-action="remove" = flash[:notice]
-
-    article
-      = yield
-    = javascript_include_tag 'admin'
+      - if flash[:notice].present?
+        .notice data-action="remove" = flash[:notice]
+      .container_12      
+        article
+          = yield
+        = javascript_include_tag 'admin'
