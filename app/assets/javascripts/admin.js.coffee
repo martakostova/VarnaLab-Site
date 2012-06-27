@@ -1,6 +1,6 @@
-= require jquery
-= require jquery_ujs
-= require_tree ./lib
+@import jquery
+@import jquery_ujs
+@import /lib
 
 $ ->
   RemoteEvents.start(document)
