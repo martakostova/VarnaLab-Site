@@ -1,11 +1,13 @@
 VarnaLab::Application.routes.draw do
+  
+
   devise_for :users
 
   namespace :admin do
     root :to => 'pages#index'
     resources :pages
     resources :events
-
+    resources :widgets
     match '/page/:page_id/comments/(:review)', :to => 'comments#index', :as => 'page_comments'
     
     resources :users, :controller => 'users' do

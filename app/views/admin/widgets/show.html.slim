@@ -1,0 +1,16 @@
+header 
+	= link_to_cancel admin_widgets_path
+	h1 = @widget.title
+	nav = link_to_edit_widget @widget
+p#notice 
+	= notice 
+
+p
+  b Name:
+  = @widget.name
+
+p
+  b Title:
+  = @widget.title
+
+

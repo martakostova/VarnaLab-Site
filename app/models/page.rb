@@ -9,6 +9,8 @@ class Page < ActiveRecord::Base
   scope :visible, where(:visible => true)
   scope :ordered, order('lft ASC')
 
+  has_many :widgets
+
   class << self
     def reorder(ids)
       return if ids.blank?
