@@ -15,4 +15,5 @@ module Admin::WidgetsHelper
 
     link_to 'Delete', [:admin, resource], attributes
   end
+  
 end

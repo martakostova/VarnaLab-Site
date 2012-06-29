@@ -12,7 +12,8 @@
 
   &:hover,
   &:focus { @include box-shadow(0 1px 0 $shadow-color, inset 3px -3px 15px $start-color, inset -3px -3px 15px $start-color); }
-  &:active { @include box-shadow(0 1px 0 $shadow-color, inset 3px -3px 15px $end-color, inset -3px -3px 15px $end-color, inset -3px 3px 15px $end-color); background: $start-color; }
+  &:active { @include box-shadow(0 1px 0 $shadow-color, inset 3px -3px 15px $end-color, 
+    inset -3px -3px 15px $end-color, inset -3px 3px 15px $end-color); background: $start-color; }
 
   padding: 5px 10px;
   text-decoration: none;

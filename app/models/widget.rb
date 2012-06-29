@@ -4,5 +4,5 @@ class Widget < ActiveRecord::Base
 
   validates_uniqueness_of :name
 
-  belongs_to :page #one page can have many widgets
+  has_and_belongs_to_many :pages #one page can have many widgets
 end

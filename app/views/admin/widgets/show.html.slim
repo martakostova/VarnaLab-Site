@@ -2,15 +2,16 @@ header
 	= link_to_cancel admin_widgets_path
 	h1 = @widget.title
 	nav = link_to_edit_widget @widget
-p#notice 
-	= notice 
+.grid_6
+	p#notice 
+		= notice 
 
-p
-  b Name:
-  = @widget.name
+	p
+	  b Name:
+	  = @widget.name
 
-p
-  b Title:
-  = @widget.title
-
-
+	p
+	  b Title:
+	  = @widget.title
+.grid_6
+	== render :partial => 'partials/'+url_for(@widget.name), :locals => {guests:@guests, tweets:@tweets}
