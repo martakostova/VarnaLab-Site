@@ -10,7 +10,7 @@ module Admin::EventsHelper
       :title => "Delete '#{resource_title}' event",
       :remote => true,
       :method => :delete,
-      :data => { :confirm => "Are you sure you want to delete #{resource_title}?" },
+      :confirm => { :confirm => "Are you sure you want to delete #{resource_title}?" },
     }.merge(options)
 
     link_to 'Delete', [:admin, resource], attributes

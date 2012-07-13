@@ -32,7 +32,6 @@ end
 
 When 'I submit the following event:' do |table|
   attributes = table.rows_hash
-
   attributes.each do |field_name, value|
     fill_in field_name, :with => value
   end
@@ -43,11 +42,12 @@ When 'I delete the "$title" event' do |title|
   visit admin_events_path
   sign_in
   click_link "Delete '#{title}' event"
-  event.should have_content('Event was successfully destroyed.')
+  save_and_open_page
+  page.should have_content('Event was successfully destroyed.')
 end
 
 When 'I submit a blank event' do
-  click_button 'Event'
+  find_button('Event').click
 end
 
 When 'I submit the event' do
@@ -59,13 +59,19 @@ Then 'I should be able to edit "$event_title"' do |event_title|
   event.should have_selector(%(a[title="Edit '#{event_title}' event"]))
 end
 
-Then 'I should see some error messages' do
-  event.should have_content('Some errors were found, please take a look again:')
+Then 'I should see some error messages' do 
+  page.should have_content('Some errors were found, please take a look:')
 end
 
 Then 'we should have the following event:' do |table|
-  attributes = table.rows_hash
-
+  attributes=Hash.new
+  table.rows_hash.each do |field_name,value|
+    if(field_name)=='Description'
+      attributes['body']=value
+    else
+      attributes[field_name]=value
+    end
+  end
   Event.where(attributes).should have(1).event
 end
 
@@ -78,7 +84,7 @@ Then 'I should not be able to see the body of "$title"' do |title|
 end
 
 Then 'I should be able to see the place of "$title"' do |title|
-  event.should have_content(Event.find_by_title!(title).body)
+  page.should have_content(Event.find_by_title!(title).body)
 end
 
 Then 'I should not find this event' do

@@ -26,7 +26,6 @@ Feature: Managing Events
       | Description   | Come with friend and beer |
     Then we should have the following event:
       | Title         | Party    |
-      | Place         | Varnalab Пенчо Славейков 50|
       | Description   | Come with friend and beer |
 
   Scenario: Deleting an event
