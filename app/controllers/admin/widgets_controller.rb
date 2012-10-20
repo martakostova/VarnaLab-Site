@@ -12,7 +12,7 @@ class Admin::WidgetsController < Admin::BaseController
 
   def show
 		@widget = Widget.find(params[:id])
-  	@guests = JSON.parse(open("http://hq.varnalab.org/list.php").read)
+  	@guests = JSON.parse(open("http://hq.varnalab.org/list.php").read) rescue {}
   	@tweets = (Twitter.user_timeline("varnalab")).first(5)
   end
   def destroy

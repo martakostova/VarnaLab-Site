@@ -3,7 +3,9 @@ class PagesController < ApplicationController
 	require 'open-uri'
   def index
   	@events = Event.all
-  	@guests = JSON.parse(open("http://hq.varnalab.org/list.php").read)
+    begin
+  	 @guests = JSON.parse(open("http://hq.varnalab.org/list.php").read) rescue {}
+    end
   	@tweets = (Twitter.user_timeline("varnalab")).first(5)
   end
 
