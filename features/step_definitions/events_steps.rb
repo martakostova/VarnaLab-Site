@@ -42,7 +42,6 @@ When 'I delete the "$title" event' do |title|
   visit admin_events_path
   sign_in
   click_link "Delete '#{title}' event"
-  save_and_open_page
   page.should have_content('Event was successfully destroyed.')
 end
 

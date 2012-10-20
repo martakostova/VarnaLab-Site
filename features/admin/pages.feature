@@ -42,7 +42,7 @@ Feature: Managing Pages
   Scenario: Browsing sub-pages
     Given "Menu > About us > Contact" page hierarchy exists
     And I am on the admin pages page
-    And I am logged in as "arta.kostova@gmail.com" with password "blabla"
+    And I am logged in as "asd@asd.asd" with password "asdasd"
     When I follow "Menu"
     And I follow "About us"
     Then I should see "Contact"
@@ -55,7 +55,18 @@ Feature: Managing Pages
     Then I am logged in as "asd@asd.asd" with password "asdasd"
     And I should be able to see the content of "About Us"
 
+  Scenario: Browsing blogposts
+    Given a page "Hello World" exists
+    And this page is a blogpost
+    When I go to admin blog page
+    Then I should be able to see the name of "Hello World"
+
   Scenario: Toggling page visibility
     Given a page "About us" exists
     When I mark the "About us" page as invisible
     Then the "About us" page should be invisible
+
+  Scenario: Toggling page blogpost flag
+    Given a page "Hello World" exists
+    When I mark the "Hello World" page as blogpost
+    Then the "Hello World" page should be a blogpost

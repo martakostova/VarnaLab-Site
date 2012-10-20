@@ -9,7 +9,8 @@ VarnaLab::Application.routes.draw do
     resources :events
     resources :widgets
     match '/page/:page_id/comments/(:review)', :to => 'comments#index', :as => 'page_comments'
-    
+    match '/blog',:to => 'pages#index_blog'
+
     resources :users, :controller => 'users' do
       match '/index', :to => 'users#index', :as => '', :on => :collection, :constraints => { :index => /[a-z]+/ }
     end

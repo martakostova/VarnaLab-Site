@@ -6,7 +6,11 @@ class Admin::PagesController < Admin::BaseController
   actions :show, :new, :create, :update, :edit, :destroy
 
   def index
-    @pages = Page.roots
+    @pages = Page.where(:blogpost => false)
+  end
+
+  def index_blog
+    @blogposts = Page.where(:blogpost => true)
   end
 
   def destroy

@@ -28,6 +28,10 @@ Given 'this page is uncommentable' do
   @page.update_attributes! :commentable => false
 end
 
+Given 'this page is a blogpost' do
+  @page.update_attributes! :blogpost =>true
+end
+
 When 'I start creating a page' do
   visit admin_pages_path
   sign_in
@@ -76,12 +80,25 @@ When 'I mark the "$name" page as invisible' do |name|
   click_button 'Page'
 end
 
+When 'I mark the "$name" page as blogpost' do |name|
+  visit edit_admin_page_path(Page.find_by_name!(name))
+  sign_in
+
+  check 'Is blogpost'
+
+  click_button 'Page'
+end
+
 When 'I submit the page' do
   click_button 'Page'
 end
 
 Then 'the "$name" page should be invisible' do |name|
   Page.find_by_name!(name).should_not be_visible
+end
+
+Then 'the "$name" page should be a blogpost' do |name|
+  Page.find_by_name!(name).should be_blogpost
 end
 
 Then 'I should be able to edit and add subpages to "$page_name"' do |page_name|
@@ -117,6 +134,10 @@ end
 
 Then 'I should be able to see the content of "$name"' do |name|
   page.should have_content(Page.find_by_name!(name).content)
+end
+
+Then 'I should be able to see the name of "$name"' do |name|
+  page.should have_content(Page.find_by_name!(name).name)
 end
 
 Then 'I should not find this page' do

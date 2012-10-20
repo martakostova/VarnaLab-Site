@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120627201507) do
+ActiveRecord::Schema.define(:version => 20121020180355) do
 
   create_table "comments", :force => true do |t|
     t.integer  "commentable_id",                      :null => false
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20120627201507) do
     t.integer  "lft",         :default => 0,    :null => false
     t.integer  "rgt",         :default => 0,    :null => false
     t.boolean  "commentable", :default => true, :null => false
+    t.boolean  "blogpost",    :default => true, :null => false
   end
 
   add_index "pages", ["parent_id"], :name => "index_pages_on_parent_id"

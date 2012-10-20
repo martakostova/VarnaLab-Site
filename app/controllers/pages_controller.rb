@@ -6,7 +6,7 @@ class PagesController < ApplicationController
     begin
   	 @guests = JSON.parse(open("http://hq.varnalab.org/list.php").read) rescue {}
     end
-  	@tweets = (Twitter.user_timeline("varnalab")).first(5)
+  	@tweets = (Twitter.user_timeline("varnalab")).first(5) rescue {}
   end
 
   def show

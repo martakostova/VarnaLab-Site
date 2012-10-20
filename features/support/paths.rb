@@ -14,6 +14,8 @@ module NavigationHelpers
       page_path(Page.find_by_name! $1)
     when /^the home\s?page$/
       '/'
+    when /^admin blog page$/
+      admin_blog_path
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
