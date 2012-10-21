@@ -6,7 +6,7 @@ class Admin::PagesController < Admin::BaseController
   actions :show, :new, :create, :update, :edit, :destroy
 
   def index
-    @pages = Page.where(:blogpost => false)
+    @pages = Page.where(:blogpost => false, :parent_id => nil)
   end
 
   def index_blog
