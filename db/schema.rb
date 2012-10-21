@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(:version => 20121020180355) do
     t.string   "commenter_name"
     t.string   "commenter_email"
     t.text     "body",                                :null => false
-    t.datetime "created_at",                          :null => false
-    t.datetime "updated_at",                          :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.boolean  "hidden",           :default => false, :null => false
     t.boolean  "reviewed",         :default => false, :null => false
   end
@@ -40,8 +40,8 @@ ActiveRecord::Schema.define(:version => 20121020180355) do
   create_table "pages", :force => true do |t|
     t.string   "name"
     t.text     "content"
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer  "parent_id"
     t.boolean  "visible",     :default => true, :null => false
     t.integer  "lft",         :default => 0,    :null => false
